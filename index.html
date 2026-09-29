@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OVJ — Over Media Art</title>
+<link rel="icon" href="media/ovj.svg" type="image/svg+xml">
+<meta name="description" content="OVJ — Over Media Art. Fashion film & media art, Seoul since 2017.">
+<link rel="preload" href="media/hero.mp4" as="video" type="video/mp4">
+<style>
+@font-face{font-family:"IS";src:url(media/fonts/is.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"IS";src:url(media/fonts/isi.woff) format("woff");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"InterV";src:url(media/fonts/inter.woff) format("woff");font-weight:100 900;font-display:swap}
+@font-face{font-family:"PretL";src:url(media/fonts/pl.woff) format("woff");font-weight:300;font-display:swap}
+@font-face{font-family:"PretL";src:url(media/fonts/pr.woff) format("woff");font-weight:400;font-display:swap}
+:root{
+  --bone:#efece6;--ink:#111110;--soft:#6f6c66;--line:rgba(17,17,16,.14);--night:#0a0a0a;--paper:#ecebe7;
+  --serif:"IS","Didot","Times New Roman",serif;
+  --sans:"InterV","PretL","Helvetica Neue","Apple SD Gothic Neo",Arial,sans-serif;
+  --kr:"PretL","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --g:clamp(16px,2.6vw,40px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+section{scroll-margin-top:60px}
+body{background:var(--bone);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-x:hidden}
+img,video{display:block;width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--ink);color:var(--bone)}
+.cap-s{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:450}
+.soft{color:var(--soft)}
+.dark{background:var(--night);color:var(--paper);--soft:#8a8780;--line:rgba(236,235,231,.14)}
+
+header{position:fixed;z-index:60;inset:0 0 auto 0;display:flex;justify-content:space-between;align-items:baseline;padding:18px var(--g);color:#fff;mix-blend-mode:difference}
+header .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:19px;letter-spacing:-.01em}
+header .brand .lg svg{height:19px;width:auto;display:block}
+header .brand .bt{padding-left:12px;border-left:1px solid currentColor;line-height:1}
+header{align-items:center}
+header nav{display:flex;gap:clamp(14px,2vw,30px)}
+header nav a{font-size:12px;font-weight:450;position:relative}
+header nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-3px;height:1px;background:currentColor;transition:right .4s}
+header nav a:hover::after{right:0}
+@media(max-width:700px){header nav a:nth-child(n+3){display:none}header .brand .bt{display:none}}
+
+.herowrap{position:relative;background:#000;color:#fff}
+.hero{position:relative;width:min(100%,calc(100svh * 16 / 9));aspect-ratio:16/9;margin:0 auto;overflow:hidden}
+.hero video{position:absolute;inset:0;height:100%}
+.herowrap::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.3),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 55%,rgba(0,0,0,.6))}
+.herowrap .in{position:absolute;z-index:2;left:var(--g);right:var(--g);bottom:calc(var(--g)*.8);display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.herowrap h1{font-family:var(--serif);font-weight:400;display:flex;align-items:flex-end;gap:clamp(14px,2.2vw,36px)}
+.lock .lg svg{height:clamp(64px,11vw,210px);width:auto;display:block}
+.lock .eq{font-size:clamp(22px,3.4vw,64px);line-height:.92;letter-spacing:-.02em;padding-left:clamp(14px,2.2vw,36px);border-left:1px solid rgba(255,255,255,.6);padding-bottom:.08em}
+.herowrap h1 i{font-style:italic;letter-spacing:-.02em}
+.herowrap .side{text-align:right;padding-bottom:1.2vw;min-width:200px}
+.herowrap .side p{font-family:var(--serif);font-size:clamp(18px,1.7vw,26px);line-height:1.15}
+.herowrap .side span{display:block;margin-top:10px}
+@media(max-width:760px){.herowrap{padding-top:56px}.herowrap::after{display:none}.herowrap .in{position:relative;left:auto;right:auto;bottom:auto;padding:26px var(--g) 36px;flex-direction:column;align-items:flex-start}.herowrap .side{text-align:left}}
+
+.intro{padding:clamp(110px,20vh,220px) var(--g) clamp(90px,16vh,180px);display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g)}
+.intro h2{grid-column:1/11;font-family:var(--serif);font-weight:400;font-size:clamp(42px,6.8vw,120px);line-height:.94;letter-spacing:-.03em}
+.intro h2 i{font-style:italic}
+.intro p{grid-column:8/13;font-family:var(--kr);font-weight:300;font-size:15px;line-height:1.95;color:var(--soft);margin-top:clamp(20px,5vh,60px)}
+@media(max-width:860px){.intro h2,.intro p{grid-column:1/-1}}
+
+.bar{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px;padding-bottom:18px;border-bottom:1px solid var(--line);margin:0 var(--g)}
+.bar h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,44px);letter-spacing:-.02em}
+.bar h3 sup{font-family:var(--sans);font-size:11px;vertical-align:top;margin-left:6px;color:var(--soft)}
+.filters{display:flex;gap:16px;flex-wrap:wrap}
+.filters button{background:none;border:0;font:inherit;font-size:12px;font-weight:450;color:var(--soft);cursor:pointer;padding:2px 0;border-bottom:1px solid transparent;transition:color .3s,border-color .3s}
+.filters button.on,.filters button:hover{color:var(--ink);border-color:var(--ink)}
+
+.m{position:relative;overflow:hidden;background:#d9d6cf}
+.dark .m{background:#1a1a1a}
+.m img,.m video{position:absolute;inset:0;height:100%;object-fit:cover}
+.m video{opacity:0;transition:opacity .7s,transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.m video.play{opacity:1}
+.m img{transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+a:hover .m img,a:hover .m video{transform:scale(1.03)}
+.r169{aspect-ratio:16/9}.r45{aspect-ratio:4/5}.r11{aspect-ratio:1/1}.rw{aspect-ratio:1600/458}.rk{aspect-ratio:1600/348}
+.t{display:flex;justify-content:space-between;gap:12px;margin-top:11px;align-items:baseline}
+.t b{font-family:var(--serif);font-weight:400;font-size:clamp(18px,1.5vw,24px);letter-spacing:-.01em;line-height:1.1}
+.t span{text-align:right;white-space:nowrap}
+
+.sel{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--g);row-gap:clamp(50px,9vh,110px);padding:clamp(40px,7vh,80px) var(--g) clamp(90px,16vh,180px);align-items:start}
+.sel .card .t b{font-size:clamp(24px,2.4vw,40px)}
+.c4{grid-column:span 4}.c5{grid-column:span 5}.c6{grid-column:span 6}.c7{grid-column:span 7}.c8{grid-column:span 8}.s3{grid-column:3/span 8}
+.dn{margin-top:clamp(40px,14vh,160px)}
+@media(max-width:860px){.sel>*{grid-column:1/-1!important;margin-top:0!important}}
+
+.ma{padding:clamp(100px,18vh,200px) var(--g)}
+.ma-head{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);margin-bottom:clamp(60px,12vh,130px)}
+.ma-head h2{grid-column:1/8;font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(60px,11vw,200px);line-height:.82;letter-spacing:-.04em}
+.ma-head p{grid-column:9/13;align-self:end;font-family:var(--kr);font-weight:300;font-size:15px;line-height:1.95;color:var(--soft)}
+.piece{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);margin-bottom:clamp(100px,18vh,200px)}
+.piece .h{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:1px solid var(--line);padding-top:14px}
+.piece .h b{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.6vw,58px);letter-spacing:-.025em;line-height:1}
+.piece .full{grid-column:1/-1}
+.piece .full video{aspect-ratio:auto}
+.piece .sim{display:flex;flex-direction:column;gap:10px}
+.piece .sim video{width:100%;display:block;background:#000}
+.piece .txt{grid-column:1/5;font-family:var(--kr);font-weight:300;font-size:15px;line-height:1.95;color:#c9c6bf}
+.piece .txt a{display:inline-block;margin-top:18px;font-family:var(--sans);font-size:12px;border-bottom:1px solid currentColor}
+.piece .a{grid-column:6/13}.piece .b{grid-column:1/7}.piece .c{grid-column:8/13;margin-top:14vh}
+.piece .trip{grid-column:1/-1;display:grid;gap:8px}
+.piece .trip.states{grid-template-columns:repeat(3,1fr);gap:12px}
+.piece .trip.states img{width:100%;display:block}
+@media(max-width:860px){.piece .trip.states{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){.ma-head>*,.piece>*{grid-column:1/-1!important;margin-top:0!important}.piece .h{flex-direction:column;gap:6px}}
+
+.arc{padding:clamp(100px,18vh,200px) 0 clamp(90px,16vh,180px)}
+.cols{columns:4 240px;column-gap:var(--g);padding:clamp(36px,6vh,70px) var(--g) 0}
+.acard{display:block;break-inside:avoid;margin-bottom:calc(var(--g)*1.3)}
+.acard.hide{display:none}
+.acard .t b{font-size:clamp(16px,1.2vw,19px)}
+
+.mq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;white-space:nowrap}
+.mq .row{display:inline-block;animation:mq 70s linear infinite;font-family:var(--serif);font-size:clamp(34px,5.4vw,92px);letter-spacing:-.02em;line-height:1}
+.mq .row i{font-style:italic;color:var(--soft);margin:0 .35em}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.about{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);padding:clamp(100px,18vh,200px) var(--g)}
+.about .pt{grid-column:1/5;position:relative;align-self:start}
+.about .pt img{filter:grayscale(1) contrast(1.05)}
+.about .pt .sg{position:absolute;right:-12%;bottom:-6%;width:62%;mix-blend-mode:multiply;filter:none}
+.about .tx{grid-column:6/13}
+.about h2{font-family:var(--serif);font-weight:400;font-size:clamp(56px,8vw,140px);line-height:.85;letter-spacing:-.035em}
+.about h2 i{font-style:italic}
+.about .role{margin-top:22px}
+.about .bio{font-family:var(--kr);font-weight:300;font-size:16px;line-height:2;margin-top:40px;max-width:620px}
+.cv{list-style:none;margin-top:50px;max-width:720px}
+.cv li{display:grid;grid-template-columns:90px 1fr;padding:10px 0;border-top:1px solid var(--line);font-size:13px}
+.cv li:last-child{border-bottom:1px solid var(--line)}
+@media(max-width:860px){.about>*{grid-column:1/-1!important}.about .pt .sg{right:0}}
+
+.space{padding:clamp(100px,18vh,200px) var(--g)}
+.space .g2{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);margin-top:clamp(40px,8vh,80px)}
+.space .g2 figure:first-child{grid-column:1/9}
+.space .g2 figure:last-child{grid-column:9/13;margin-top:22vh}
+.space img{aspect-ratio:3/2;object-fit:cover}
+.space .one{margin:clamp(40px,8vh,80px) 0 0}
+.space .one img{aspect-ratio:auto;width:100%;display:block}
+.space .g2 figure:last-child img{aspect-ratio:4/5}
+.space h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,84px);letter-spacing:-.03em;line-height:.95}
+.space h2 i{font-style:italic}
+.sawban{position:relative;display:block;height:124px;margin:0;overflow:hidden;background:#674498;color:#fff;text-decoration:none}
+.sawban .reel{position:absolute;inset:0 0 0 38%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 22%);mask-image:linear-gradient(90deg,transparent,#000 22%)}
+.sawban .strip{display:flex;gap:3px;height:100%;width:max-content;animation:sawscroll 48s linear infinite}
+.sawban .strip img{height:100%;width:auto;display:block;filter:grayscale(.35) contrast(1.05);opacity:.85;mix-blend-mode:luminosity}
+.sawban:hover .strip img{mix-blend-mode:normal;opacity:1;filter:none}
+.sawban .strip img{transition:opacity .5s,filter .5s}
+@keyframes sawscroll{to{transform:translateX(-50%)}}
+.sawban .in{position:relative;z-index:2;height:100%;display:flex;align-items:center;gap:28px;padding:0 var(--g);background:linear-gradient(90deg,#674498 34%,rgba(103,68,152,.55) 60%,rgba(103,68,152,0))}
+.sawban .lg{height:44px;width:auto;display:block}
+.sawban .tx{display:flex;flex-direction:column;gap:6px}
+.sawban .tx b{font-family:var(--serif);font-weight:400;font-size:clamp(22px,2.2vw,32px);letter-spacing:-.02em;line-height:1}
+.sawban .go{margin-left:auto;border-bottom:1px solid rgba(255,255,255,.7)}
+@media(max-width:700px){.sawban{height:auto}.sawban .in{flex-wrap:wrap;gap:12px;padding:22px var(--g);background:rgba(103,68,152,.82)}.sawban .reel{inset:0}.sawban .go{margin-left:0}}
+@media(prefers-reduced-motion:reduce){.sawban .strip{animation:none}}
+@media(max-width:760px){.space .g2 figure{grid-column:1/-1!important;margin-top:0!important}}
+
+.contact{padding:clamp(110px,20vh,220px) var(--g) clamp(60px,10vh,100px)}
+.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(48px,10vw,190px);line-height:.88;letter-spacing:-.04em}
+.contact h2 a{border-bottom:1px solid var(--line);transition:border-color .5s}
+.contact h2 a:hover{border-color:var(--ink)}
+.cg{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--g);margin-top:clamp(60px,12vh,120px);font-size:13px}
+.cg div span{display:block;margin-bottom:8px}
+.cg a:hover{text-decoration:underline}
+@media(max-width:760px){.cg{grid-template-columns:1fr 1fr}}
+footer .flg svg{height:14px;width:auto;display:block}
+footer{align-items:center;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:18px var(--g) 26px;border-top:1px solid var(--line);font-size:11px;color:var(--soft)}
+
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1.3s ease,transform 1.3s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+.mask{clip-path:inset(0 0 100% 0);transition:clip-path 1.6s cubic-bezier(.7,0,.2,1)}
+.mask.on{clip-path:inset(0 0 0 0)}
+@media(prefers-reduced-motion:reduce){.rv,.mask{opacity:1;transform:none;clip-path:none}.mq .row{animation:none}}
+
+/* 영상 창 */
+#player{position:fixed;inset:0;z-index:100;background:rgba(6,6,6,.96);display:none;flex-direction:column;align-items:center;justify-content:center;padding:clamp(56px,8vh,90px) clamp(12px,4vw,60px) clamp(20px,4vh,40px);color:#fff}
+#player.on{display:flex}
+#player .frame{position:relative;width:min(100%,calc((100vh - 200px) * var(--ar,1.7778)));aspect-ratio:var(--ar,16/9);max-height:calc(100vh - 200px);background:#000}
+#player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#player .cap{width:min(100%,calc((100vh - 200px) * var(--ar,1.7778)));display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:16px}
+#player .cap b{font-family:var(--serif);font-weight:400;font-size:clamp(22px,2.4vw,38px);letter-spacing:-.02em}
+#player .cap span{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#aaa}
+#player .x{position:absolute;top:18px;right:var(--g);font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;background:none;border:0;color:#fff}
+#player .nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:#fff;font-family:var(--serif);font-size:38px;cursor:pointer;padding:20px;opacity:.6}
+#player .nav:hover{opacity:1}#player .pv{left:4px}#player .nx{right:4px}
+#player .brand{position:absolute;top:18px;left:var(--g);display:flex;gap:10px;align-items:center;font-family:var(--serif);font-size:17px}
+#player .brand svg{height:15px;width:auto}
+[data-yt]{cursor:pointer}
+[data-yt] .m::after{content:"▶  Play";position:absolute;right:12px;bottom:10px;font-size:11px;letter-spacing:.08em;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6);opacity:0;transition:opacity .3s}
+[data-yt]:hover .m::after{opacity:1}
+@media(max-width:760px){#player .nav{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#top"><span class="lg"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="1046.8 475.9 467.5 188.0" fill="currentColor"><path d="M 1334.179688 659.128906 C 1308.628906 598.613281 1283.527344 539.171875 1257.730469 478.070312 C 1262.210938 478.070312 1265.558594 478.070312 1268.90625 478.070312 C 1279.988281 478.074219 1291.070312 478.242188 1302.144531 478 C 1306.363281 477.90625 1308.441406 479.511719 1309.980469 483.34375 C 1324.949219 520.652344 1340.113281 557.882812 1355.054688 595.203125 C 1355.925781 597.378906 1356.117188 600.386719 1355.355469 602.566406 C 1349.144531 620.3125 1342.636719 637.957031 1336.195312 655.621094 C 1335.90625 656.410156 1335.355469 657.101562 1334.179688 659.128906 "/><path d="M 1512.632812 478.03125 C 1512.632812 485.035156 1512.632812 490.660156 1512.632812 496.28125 C 1512.632812 534.847656 1511.589844 573.449219 1512.925781 611.96875 C 1514.273438 650.785156 1482.09375 663.910156 1456.386719 659.164062 C 1454.789062 658.871094 1453.1875 658.574219 1451.296875 658.222656 C 1451.816406 657.402344 1452.046875 656.523438 1452.527344 656.347656 C 1467.367188 651.019531 1471.246094 639.605469 1471.15625 625.089844 C 1470.878906 578.765625 1471.1875 532.441406 1470.914062 486.113281 C 1470.875 479.496094 1472.945312 477.632812 1479.328125 477.90625 C 1490.089844 478.367188 1500.886719 478.03125 1512.632812 478.03125 "/><path d="M 1112.972656 658.3125 C 1072.757812 642.894531 1047.3125 607.886719 1047.035156 568.734375 C 1046.753906 529.167969 1072.785156 492.304688 1112.507812 475.90625 C 1091.527344 514.121094 1094.527344 555.652344 1096.269531 596.953125 C 1096.964844 613.433594 1099.503906 629.691406 1106.070312 645.027344 C 1107.894531 649.277344 1110.328125 653.265625 1112.972656 658.3125 "/><path d="M 1164.789062 476.585938 C 1199.339844 490.191406 1230.292969 524.890625 1230.070312 568.859375 C 1229.839844 613.507812 1196.628906 646.535156 1164.371094 657.765625 C 1181.855469 629.796875 1182.144531 598.421875 1182.28125 567.378906 C 1182.421875 536.410156 1181.765625 505.222656 1164.789062 476.585938 "/><path d="M 1437.222656 608.894531 C 1448.734375 608.765625 1457.867188 617.789062 1457.875 629.300781 C 1457.882812 640.773438 1448.820312 649.964844 1437.421875 650.046875 C 1426.488281 650.125 1417.351562 641.011719 1417.195312 629.867188 C 1417.027344 618.210938 1425.800781 609.023438 1437.222656 608.894531 "/></svg></span><span class="bt">Over Media Art</span></a>
+  <nav><a href="#selected">Selected</a><a href="#media-art">Media Art</a><a href="#archive">Archive</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</header>
+
+<div class="herowrap" id="top">
+  <div class="hero"><video src="media/hero.mp4" autoplay muted loop playsinline></video></div>
+  <div class="in">
+    <h1 class="lock"><span class="lg" aria-label="OVJ"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="1046.8 475.9 467.5 188.0" fill="currentColor"><path d="M 1334.179688 659.128906 C 1308.628906 598.613281 1283.527344 539.171875 1257.730469 478.070312 C 1262.210938 478.070312 1265.558594 478.070312 1268.90625 478.070312 C 1279.988281 478.074219 1291.070312 478.242188 1302.144531 478 C 1306.363281 477.90625 1308.441406 479.511719 1309.980469 483.34375 C 1324.949219 520.652344 1340.113281 557.882812 1355.054688 595.203125 C 1355.925781 597.378906 1356.117188 600.386719 1355.355469 602.566406 C 1349.144531 620.3125 1342.636719 637.957031 1336.195312 655.621094 C 1335.90625 656.410156 1335.355469 657.101562 1334.179688 659.128906 "/><path d="M 1512.632812 478.03125 C 1512.632812 485.035156 1512.632812 490.660156 1512.632812 496.28125 C 1512.632812 534.847656 1511.589844 573.449219 1512.925781 611.96875 C 1514.273438 650.785156 1482.09375 663.910156 1456.386719 659.164062 C 1454.789062 658.871094 1453.1875 658.574219 1451.296875 658.222656 C 1451.816406 657.402344 1452.046875 656.523438 1452.527344 656.347656 C 1467.367188 651.019531 1471.246094 639.605469 1471.15625 625.089844 C 1470.878906 578.765625 1471.1875 532.441406 1470.914062 486.113281 C 1470.875 479.496094 1472.945312 477.632812 1479.328125 477.90625 C 1490.089844 478.367188 1500.886719 478.03125 1512.632812 478.03125 "/><path d="M 1112.972656 658.3125 C 1072.757812 642.894531 1047.3125 607.886719 1047.035156 568.734375 C 1046.753906 529.167969 1072.785156 492.304688 1112.507812 475.90625 C 1091.527344 514.121094 1094.527344 555.652344 1096.269531 596.953125 C 1096.964844 613.433594 1099.503906 629.691406 1106.070312 645.027344 C 1107.894531 649.277344 1110.328125 653.265625 1112.972656 658.3125 "/><path d="M 1164.789062 476.585938 C 1199.339844 490.191406 1230.292969 524.890625 1230.070312 568.859375 C 1229.839844 613.507812 1196.628906 646.535156 1164.371094 657.765625 C 1181.855469 629.796875 1182.144531 598.421875 1182.28125 567.378906 C 1182.421875 536.410156 1181.765625 505.222656 1164.789062 476.585938 "/><path d="M 1437.222656 608.894531 C 1448.734375 608.765625 1457.867188 617.789062 1457.875 629.300781 C 1457.882812 640.773438 1448.820312 649.964844 1437.421875 650.046875 C 1426.488281 650.125 1417.351562 641.011719 1417.195312 629.867188 C 1417.027344 618.210938 1425.800781 609.023438 1437.222656 608.894531 "/></svg></span><span class="eq">Over<br>Media <i>Art</i></span></h1>
+    <div class="side"><p>Fashion film<br>&amp; media art</p><span class="cap-s">Seoul — since 2017</span></div>
+  </div>
+</div>
+
+<section class="intro">
+  <h2 class="rv">Images to be <i>worn.</i><br>Walls that <i>breathe.</i></h2>
+  <p class="rv">입을 수 있는 이미지, 숨 쉬는 벽.<br>OVJ(오버미디어아트)는 패션과 미디어아트 사이에서 영상과 빛으로 한 사람의 시선을 짓는 아티스트 그룹입니다.</p>
+</section>
+
+<section id="selected">
+  <div class="bar"><h3>Selected Work</h3><span class="cap-s soft">2017 — 2024</span></div>
+  <div class="sel">
+<a class="card c7 rv" data-yt="sC4MIqyd8gA" data-ar="1920/1080" data-t="Women of Ocean" data-me="Fashion film project No.1 — 2018"><div class="m" style="aspect-ratio:1920/1080"><img src="media/ocean.jpg" alt="" loading="lazy"><video data-src="media/ocean.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Women of Ocean</b><span class="cap-s soft">Fashion film project No.1 — 2018</span></div></a>
+<a class="card c5 dn rv" data-yt="AkxZhR402w4" data-ar="1920/1080" data-t="Kwon Jin-ah" data-me="Album film — 2023"><div class="m" style="aspect-ratio:1920/1080"><img src="media/gja.jpg" alt="" loading="lazy"><video data-src="media/gja.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Kwon Jin-ah</b><span class="cap-s soft">Album film — 2023</span></div></a>
+<a class="card c7 rv" data-yt="E9-8y-RK_Uk" data-ar="1920/1080" data-t="Marie Claire — Bloomingscene" data-me="Fashion film — 2017"><div class="m" style="aspect-ratio:1920/1080"><img src="media/mari.jpg" alt="" loading="lazy"><video data-src="media/mari.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Marie Claire — Bloomingscene</b><span class="cap-s soft">Fashion film — 2017</span></div></a>
+<a class="card c5 dn rv" data-yt="458VX77B1q4" data-ar="1920/1080" data-t="W Korea × Gucci" data-me="Fashion film — 2016"><div class="m" style="aspect-ratio:1920/1080"><img src="media/gucci.jpg" alt="" loading="lazy"><video data-src="media/gucci.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea × Gucci</b><span class="cap-s soft">Fashion film — 2016</span></div></a>
+<a class="card c6 rv" data-yt="2_pltowvy7E" data-ar="1920/1080" data-t="Fall in Coco" data-me="Fashion film — 2019"><div class="m" style="aspect-ratio:1920/1080"><img src="media/coco.jpg" alt="" loading="lazy"><video data-src="media/coco.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Fall in Coco</b><span class="cap-s soft">Fashion film — 2019</span></div></a>
+<a class="card c6 dn rv" data-yt="eD8lT9UcN7k" data-ar="1920/1080" data-t="Fashion Film" data-me="Europe — 2017"><div class="m" style="aspect-ratio:1920/1080"><img src="media/eu17.jpg" alt="" loading="lazy"><video data-src="media/eu17.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Fashion Film</b><span class="cap-s soft">Europe — 2017</span></div></a>
+<a class="card c7 rv" data-yt="Sj0YkMLONT0" data-ar="3840/2160" data-t="JOYURI" data-me="Concept film — 2023"><div class="m" style="aspect-ratio:3840/2160"><img src="media/jyr.jpg" alt="" loading="lazy"><video data-src="media/jyr.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>JOYURI</b><span class="cap-s soft">Concept film — 2023</span></div></a>
+<a class="card c5 dn rv" data-yt="3Otc6KWC_-o" data-ar="1902/1080" data-t="W Korea — The Silhouette" data-me="Fashion film — 2016"><div class="m" style="aspect-ratio:1902/1080"><img src="media/silh.jpg" alt="" loading="lazy"><video data-src="media/silh.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea — The Silhouette</b><span class="cap-s soft">Fashion film — 2016</span></div></a>
+<a class="card c5 rv" data-yt="hT0rUurJFL0" data-ar="3840/2160" data-t="Chupa Chups × Lee Chan-hyuk" data-me="Campaign film — 2022"><div class="m" style="aspect-ratio:3840/2160"><img src="media/chu.jpg" alt="" loading="lazy"><video data-src="media/chu.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Chupa Chups × Lee Chan-hyuk</b><span class="cap-s soft">Campaign film — 2022</span></div></a>
+<a class="card c7 dn rv" data-yt="-REVIOLRvdQ" data-ar="1902/1080" data-t="W Korea × Fendi" data-me="Fashion film — 2016"><div class="m" style="aspect-ratio:1902/1080"><img src="media/wfendi.jpg" alt="" loading="lazy"><video data-src="media/wfendi.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea × Fendi</b><span class="cap-s soft">Fashion film — 2016</span></div></a>
+<a class="card c7 rv" data-yt="4i0TV56Gq7M" data-ar="1902/1080" data-t="W Korea × Shin Min-a" data-me="Fashion film — 2016"><div class="m" style="aspect-ratio:1902/1080"><img src="media/smna.jpg" alt="" loading="lazy"><video data-src="media/smna.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea × Shin Min-a</b><span class="cap-s soft">Fashion film — 2016</span></div></a>
+<a class="card c5 dn rv" data-yt="2bJ0A21kIPw" data-ar="1920/1080" data-t="W Concept × AKMU" data-me="Fashion film — 2021"><div class="m" style="aspect-ratio:1920/1080"><img src="media/akmu.jpg" alt="" loading="lazy"><video data-src="media/akmu.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Concept × AKMU</b><span class="cap-s soft">Fashion film — 2021</span></div></a>
+<a class="card c4 rv" data-yt="LV8NWfcebgA" data-ar="1080/1350" data-t="W Korea × Etro" data-me="Fashion film — 2018"><div class="m" style="aspect-ratio:1080/1350"><img src="media/wetro.jpg" alt="" loading="lazy"><video data-src="media/wetro.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea × Etro</b><span class="cap-s soft">Fashion film — 2018</span></div></a>
+<a class="card c8 dn rv" data-yt="BDr350F-Ibo" data-ar="4096/2160" data-t="Dreamcatcher" data-me="Concept film — 2021"><div class="m" style="aspect-ratio:4096/2160"><img src="media/dc.jpg" alt="" loading="lazy"><video data-src="media/dc.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Dreamcatcher</b><span class="cap-s soft">Concept film — 2021</span></div></a>
+<a class="card c4 rv" data-yt="4K5oeHochso" data-ar="1080/1350" data-t="W Korea — Beach" data-me="Fashion film — 2017"><div class="m" style="aspect-ratio:1080/1350"><img src="media/wbeach.jpg" alt="" loading="lazy"><video data-src="media/wbeach.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea — Beach</b><span class="cap-s soft">Fashion film — 2017</span></div></a>
+<a class="card c8 dn rv" data-yt="vSKxf-eDNpI" data-ar="1920/1080" data-t="ASTRO — All Yours" data-me="Mood trailer — 2021"><div class="m" style="aspect-ratio:1920/1080"><img src="media/astro.jpg" alt="" loading="lazy"><video data-src="media/astro.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>ASTRO — All Yours</b><span class="cap-s soft">Mood trailer — 2021</span></div></a>
+<a class="card c8 rv" data-yt="K89QpI9QU10" data-ar="1920/1080" data-t="Stretch Angels — Travel" data-me="Director&#x27;s cut — 2018"><div class="m" style="aspect-ratio:1920/1080"><img src="media/alt.jpg" alt="" loading="lazy"><video data-src="media/alt.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Stretch Angels — Travel</b><span class="cap-s soft">Director&#x27;s cut — 2018</span></div></a>
+<a class="card c4 dn rv" data-yt="GkO8JvBPT4w" data-ar="1080/1350" data-t="W Korea" data-me="Fashion film — 2017"><div class="m" style="aspect-ratio:1080/1350"><img src="media/wmm.jpg" alt="" loading="lazy"><video data-src="media/wmm.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea</b><span class="cap-s soft">Fashion film — 2017</span></div></a>
+<a class="card c5 rv" data-yt="PtwrBQRhH6Y" data-ar="1902/1080" data-t="W Korea × BewhY" data-me="Fashion film — 2016"><div class="m" style="aspect-ratio:1902/1080"><img src="media/bewhy.jpg" alt="" loading="lazy"><video data-src="media/bewhy.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea × BewhY</b><span class="cap-s soft">Fashion film — 2016</span></div></a>
+<a class="card c7 dn rv" data-yt="zNibkIDjz1s" data-ar="1920/1080" data-t="MICHAA — Resort Collection" data-me="Fashion film — 2016"><div class="m" style="aspect-ratio:1920/1080"><img src="media/michaa.jpg" alt="" loading="lazy"><video data-src="media/michaa.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>MICHAA — Resort Collection</b><span class="cap-s soft">Fashion film — 2016</span></div></a>
+<a class="card c7 rv" data-yt="06spA8tVat0" data-ar="1920/1080" data-t="Stretch Angels — Activity" data-me="Director&#x27;s cut — 2018"><div class="m" style="aspect-ratio:1920/1080"><img src="media/act.jpg" alt="" loading="lazy"><video data-src="media/act.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Stretch Angels — Activity</b><span class="cap-s soft">Director&#x27;s cut — 2018</span></div></a>
+<a class="card c5 dn rv" data-yt="mPnmMAQzyZA" data-ar="1920/1080" data-t="Fall in Coco" data-me="Teaser — 2019"><div class="m" style="aspect-ratio:1920/1080"><img src="media/coco2.jpg" alt="" loading="lazy"><video data-src="media/coco2.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Fall in Coco</b><span class="cap-s soft">Teaser — 2019</span></div></a>
+  </div>
+</section>
+
+<div class="mq dark"><div class="row">W Korea<i>—</i>Vogue<i>—</i>ELLE<i>—</i>Marie Claire<i>—</i>Chanel<i>—</i>Gucci<i>—</i>Cartier<i>—</i>Bvlgari<i>—</i>GRAFF<i>—</i>Fendi<i>—</i>Chaumet<i>—</i>Descente<i>—</i>Samsung<i>—</i>Google<i>—</i>W Korea<i>—</i>Vogue<i>—</i>ELLE<i>—</i>Marie Claire<i>—</i>Chanel<i>—</i>Gucci<i>—</i>Cartier<i>—</i>Bvlgari<i>—</i>GRAFF<i>—</i>Fendi<i>—</i>Chaumet<i>—</i>Descente<i>—</i>Samsung<i>—</i>Google<i>—</i></div></div>
+
+<section class="ma dark" id="media-art">
+  <div class="ma-head">
+    <h2 class="rv">Media<br>Art</h2>
+    <p class="rv">벽은 화면이 아니라 무대다. 문학관의 긴 벽과 뉴욕의 전시장에서, 우리는 오브제와 이미지, 관객이 같은 호흡을 나누는 공간을 연출한다.</p>
+  </div>
+  <div class="piece">
+    <div class="h rv" data-yt="iHou6ZHiucQ" data-ar="16/9" data-t="Kim Hong-shin Asks, Lee O-young Answers" data-me="Kinetic media wall — 2019"><b>Kim Hong-shin Asks, Lee O-young Answers</b><span class="cap-s soft">Kim Hong-shin Literature Museum — 2019 — 2392 × 520</span></div>
+    <div class="full mask"><video src="media/loop_kh.mp4" autoplay muted loop playsinline></video></div>
+    <div class="full sim rv"><video src="media/khs_sim.mp4" poster="media/khs_sim_poster.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="cap-s soft">Installation — four double-sided displays turning 90° to face one another · simulation</span></div>
+    <div class="trip states rv"><img src="media/khs_s1.jpg" alt=""><img src="media/khs_s2.jpg" alt=""><img src="media/khs_s3.jpg" alt=""><img src="media/khs_s4.jpg" alt=""><img src="media/khs_s5.jpg" alt=""><img src="media/khs_s6.jpg" alt=""></div>
+    <div class="txt rv">두 문인이 긴 벽의 양 끝에서 서로에게 묻고 답한다. 얼굴과 얼굴 사이를 펜의 궤적과 밤의 도시가 건너간다.<br><a href="https://www.youtube.com/watch?v=yImzCMIuZx4&t=1151s" target="_blank" rel="noopener">Watch the film ↗</a></div>
+  </div>
+  <div class="piece" style="margin-bottom:0">
+    <div class="h rv" data-yt="-s89Z1RAue4" data-ar="16/9" data-t="Boundaries of Existence" data-me="Korean Cultural Center New York — 2024"><b>Boundaries of Existence</b><span class="cap-s soft">Korean Cultural Center New York — 2024.06.25 / 08.17</span></div>
+    <div class="full mask"><video src="media/hero_hj.mp4" autoplay muted loop playsinline></video></div>
+    <div class="txt rv">수묵이 번지고, 옷의 색이 물처럼 흐르고, 꽃이 빛으로 핀다. 벽에 걸린 것과 벽 위에 비친 것 사이의 경계가 흐려지는 방.<br><span class="cap-s soft">For Jinhee Lee — with Community Design Lab</span><br><a href="https://www.youtube.com/watch?v=8NssWan5l-Q" target="_blank" rel="noopener">Watch the film ↗</a></div>
+    <div class="a rv"><img src="media/hj_18.jpg" alt=""></div>
+    <div class="b rv"><img src="media/hj_11.jpg" alt=""></div>
+    <div class="c rv"><img src="media/hj_20.jpg" alt=""></div>
+  </div>
+</section>
+
+<section class="arc" id="archive">
+  <div class="bar"><h3>Archive<sup>(53)</sup></h3><div class="filters"><button class="on" data-f="all">All</button><button data-f="fashion">Fashion</button><button data-f="music">Music</button><button data-f="object">Object & Beauty</button><button data-f="brand">Brand</button><button data-f="art">Stage & Art</button></div></div>
+  <div class="cols">
+<a class="acard" data-cat="fashion" data-yt="RQN33CS4x7I" data-ar="1080/1350" data-t="W Korea" data-me="Fashion film — 2023"><div class="m" style="aspect-ratio:1080/1350"><img src="media/wsl.jpg" alt="" loading="lazy"><video data-src="media/wsl.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea</b><span class="cap-s soft">Fashion film — 2023</span></div></a>
+<a class="acard" data-cat="brand" data-yt="jEKCPBl5sWI" data-ar="1920/1080" data-t="Selvatico" data-me="Brand film — 2024"><div class="m" style="aspect-ratio:1920/1080"><img src="media/selv.jpg" alt="" loading="lazy"><video data-src="media/selv.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Selvatico</b><span class="cap-s soft">Brand film — 2024</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="2vSNEmKyREM" data-ar="1920/1080" data-t="W Korea × Park Shin-hye" data-me="Fashion film — 2017"><div class="m" style="aspect-ratio:1920/1080"><img src="media/psh.jpg" alt="" loading="lazy"><video data-src="media/psh.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea × Park Shin-hye</b><span class="cap-s soft">Fashion film — 2017</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="Q-zf2sqQuq0" data-ar="1080/1920" data-t="W Korea × Gucci — IU" data-me="Fashion film — 2023"><div class="m" style="aspect-ratio:1080/1920"><img src="media/iu.jpg" alt="" loading="lazy"><video data-src="media/iu.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea × Gucci — IU</b><span class="cap-s soft">Fashion film — 2023</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="3wjTKK0KzRk" data-ar="1080/1920" data-t="W Korea × Gucci — Shin Min-a" data-me="Fashion film — 2023"><div class="m" style="aspect-ratio:1080/1920"><img src="media/smn.jpg" alt="" loading="lazy"><video data-src="media/smn.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea × Gucci — Shin Min-a</b><span class="cap-s soft">Fashion film — 2023</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="DyAe2V8dtfE" data-ar="1080/1350" data-t="W Korea × Chanel" data-me="Fashion film — 2023"><div class="m" style="aspect-ratio:1080/1350"><img src="media/wchl.jpg" alt="" loading="lazy"><video data-src="media/wchl.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea × Chanel</b><span class="cap-s soft">Fashion film — 2023</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="BojQElXm4h4" data-ar="1080/1350" data-t="W Korea × Chanel" data-me="Fashion film — 2023"><div class="m" style="aspect-ratio:1080/1350"><img src="media/wchn.jpg" alt="" loading="lazy"><video data-src="media/wchn.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea × Chanel</b><span class="cap-s soft">Fashion film — 2023</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="kRekMNIaXzs" data-ar="1920/1080" data-t="Marie Claire × Park Bo-gum" data-me="Fashion film — 2025"><div class="m" style="aspect-ratio:1920/1080"><img src="media/pbg.jpg" alt="" loading="lazy"><video data-src="media/pbg.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Marie Claire × Park Bo-gum</b><span class="cap-s soft">Fashion film — 2025</span></div></a>
+<a class="acard" data-cat="object" data-yt="UuD6XHUEdoc" data-ar="1080/1920" data-t="W Korea × Cartier" data-me="Jewelry film — 2025"><div class="m" style="aspect-ratio:1080/1920"><img src="media/wcart.jpg" alt="" loading="lazy"><video data-src="media/wcart.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea × Cartier</b><span class="cap-s soft">Jewelry film — 2025</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="y-n2nM6ycGY" data-ar="1080/1350" data-t="W Korea — Sneakers" data-me="Fashion film — 2025"><div class="m" style="aspect-ratio:1080/1350"><img src="media/wsnk.jpg" alt="" loading="lazy"><video data-src="media/wsnk.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea — Sneakers</b><span class="cap-s soft">Fashion film — 2025</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="Tc-bOUGvfIw" data-ar="1080/1350" data-t="W Korea — Spring" data-me="Fashion film — 2026"><div class="m" style="aspect-ratio:1080/1350"><img src="media/wspr.jpg" alt="" loading="lazy"><video data-src="media/wspr.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea — Spring</b><span class="cap-s soft">Fashion film — 2026</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="osBtF5ULbKY" data-ar="1080/1350" data-t="W Korea — Sports" data-me="Fashion film — 2026"><div class="m" style="aspect-ratio:1080/1350"><img src="media/wspt.jpg" alt="" loading="lazy"><video data-src="media/wspt.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea — Sports</b><span class="cap-s soft">Fashion film — 2026</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="QgvPxit1il4" data-ar="1076/1924" data-t="W Korea — Book" data-me="Editorial film — 2026"><div class="m" style="aspect-ratio:1076/1924"><img src="media/wbook.jpg" alt="" loading="lazy"><video data-src="media/wbook.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>W Korea — Book</b><span class="cap-s soft">Editorial film — 2026</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="3u9Fe8O4icU" data-ar="1080/1920" data-t="Shinsegae Magazine" data-me="Editorial film — 2025"><div class="m" style="aspect-ratio:1080/1920"><img src="media/ssgm.jpg" alt="" loading="lazy"><video data-src="media/ssgm.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Shinsegae Magazine</b><span class="cap-s soft">Editorial film — 2025</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="TWgUYSSAPc0" data-ar="1080/1920" data-t="Le Coq Sportif" data-me="Fashion film — 2025"><div class="m" style="aspect-ratio:1080/1920"><img src="media/lecoq.jpg" alt="" loading="lazy"><video data-src="media/lecoq.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Le Coq Sportif</b><span class="cap-s soft">Fashion film — 2025</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="qtvv3CX5CTw" data-ar="3840/2160" data-t="MOSS — 23FW" data-me="Fashion film — 2023"><div class="m" style="aspect-ratio:3840/2160"><img src="media/moss23.jpg" alt="" loading="lazy"><video data-src="media/moss23.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>MOSS — 23FW</b><span class="cap-s soft">Fashion film — 2023</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="9UpsYIO1Shk" data-ar="1920/1080" data-t="MOSS — Campaign" data-me="Fashion film — 2022"><div class="m" style="aspect-ratio:1920/1080"><img src="media/moss22.jpg" alt="" loading="lazy"><video data-src="media/moss22.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>MOSS — Campaign</b><span class="cap-s soft">Fashion film — 2022</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="KkpRzchWU9s" data-ar="1080/1350" data-t="Noblesse × Fendi" data-me="Fashion film — 2022"><div class="m" style="aspect-ratio:1080/1350"><img src="media/fendi.jpg" alt="" loading="lazy"><video data-src="media/fendi.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Noblesse × Fendi</b><span class="cap-s soft">Fashion film — 2022</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="pRgb60jufEA" data-ar="1080/1350" data-t="ELLE × Nayeon" data-me="Fashion film — 2021"><div class="m" style="aspect-ratio:1080/1350"><img src="media/ellen.jpg" alt="" loading="lazy"><video data-src="media/ellen.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>ELLE × Nayeon</b><span class="cap-s soft">Fashion film — 2021</span></div></a>
+<a class="acard" data-cat="music" data-yt="Ctv8AKnRRM8" data-ar="1920/1080" data-t="ELLE × HOOK" data-me="Dance film — 2021"><div class="m" style="aspect-ratio:1920/1080"><img src="media/elleh.jpg" alt="" loading="lazy"><video data-src="media/elleh.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>ELLE × HOOK</b><span class="cap-s soft">Dance film — 2021</span></div></a>
+<a class="acard" data-cat="music" data-yt="koee__7TXQo" data-ar="1920/1080" data-t="ASTRO — Cha Eun-woo" data-me="Mood trailer — 2021"><div class="m" style="aspect-ratio:1920/1080"><img src="media/cha.jpg" alt="" loading="lazy"><video data-src="media/cha.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>ASTRO — Cha Eun-woo</b><span class="cap-s soft">Mood trailer — 2021</span></div></a>
+<a class="acard" data-cat="music" data-yt="m0K3VjJ94cM" data-ar="1920/1080" data-t="Dreamcatcher" data-me="Photobook film — 2022"><div class="m" style="aspect-ratio:1920/1080"><img src="media/dcp.jpg" alt="" loading="lazy"><video data-src="media/dcp.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Dreamcatcher</b><span class="cap-s soft">Photobook film — 2022</span></div></a>
+<a class="acard" data-cat="object" data-yt="S_tEBz0EYlQ" data-ar="1152/1440" data-t="Bvlgari" data-me="Jewelry film — 2024"><div class="m" style="aspect-ratio:1152/1440"><img src="media/bulgari.jpg" alt="" loading="lazy"><video data-src="media/bulgari.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Bvlgari</b><span class="cap-s soft">Jewelry film — 2024</span></div></a>
+<a class="acard" data-cat="object" data-yt="g_8_LnCVsHU" data-ar="1152/1440" data-t="GRAFF" data-me="Jewelry film — 2024"><div class="m" style="aspect-ratio:1152/1440"><img src="media/graff.jpg" alt="" loading="lazy"><video data-src="media/graff.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>GRAFF</b><span class="cap-s soft">Jewelry film — 2024</span></div></a>
+<a class="acard" data-cat="object" data-yt="vflnpHEjZ8w" data-ar="1080/1350" data-t="Korloff" data-me="Jewelry film — 2022"><div class="m" style="aspect-ratio:1080/1350"><img src="media/korloff.jpg" alt="" loading="lazy"><video data-src="media/korloff.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Korloff</b><span class="cap-s soft">Jewelry film — 2022</span></div></a>
+<a class="acard" data-cat="object" data-yt="2hoDIpfu0DY" data-ar="1080/1350" data-t="Chaumet" data-me="Jewelry film — 2026"><div class="m" style="aspect-ratio:1080/1350"><img src="media/chaumet.jpg" alt="" loading="lazy"><video data-src="media/chaumet.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Chaumet</b><span class="cap-s soft">Jewelry film — 2026</span></div></a>
+<a class="acard" data-cat="object" data-yt="WIsGryA0RYE" data-ar="1080/1350" data-t="Cosmopolitan — Rings" data-me="Jewelry film — 2026"><div class="m" style="aspect-ratio:1080/1350"><img src="media/rings.jpg" alt="" loading="lazy"><video data-src="media/rings.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Cosmopolitan — Rings</b><span class="cap-s soft">Jewelry film — 2026</span></div></a>
+<a class="acard" data-cat="object" data-yt="o4UrA0GLO3M" data-ar="1920/1080" data-t="d&#x27;Alba" data-me="Beauty film — 2026"><div class="m" style="aspect-ratio:1920/1080"><img src="media/dalba.jpg" alt="" loading="lazy"><video data-src="media/dalba.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>d&#x27;Alba</b><span class="cap-s soft">Beauty film — 2026</span></div></a>
+<a class="acard" data-cat="object" data-yt="LTigE2u9F8Y" data-ar="1080/1920" data-t="bomie" data-me="Beauty film — 2025"><div class="m" style="aspect-ratio:1080/1920"><img src="media/bomie.jpg" alt="" loading="lazy"><video data-src="media/bomie.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>bomie</b><span class="cap-s soft">Beauty film — 2025</span></div></a>
+<a class="acard" data-cat="object" data-yt="GHJi1Sh4bfU" data-ar="1080/1350" data-t="Cosmopolitan × Dyson" data-me="Beauty film — 2025"><div class="m" style="aspect-ratio:1080/1350"><img src="media/dyson.jpg" alt="" loading="lazy"><video data-src="media/dyson.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Cosmopolitan × Dyson</b><span class="cap-s soft">Beauty film — 2025</span></div></a>
+<a class="acard" data-cat="object" data-yt="QhziQP48xcU" data-ar="1080/1350" data-t="Cosmopolitan × Rituals" data-me="Beauty film — 2025"><div class="m" style="aspect-ratio:1080/1350"><img src="media/ritual.jpg" alt="" loading="lazy"><video data-src="media/ritual.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Cosmopolitan × Rituals</b><span class="cap-s soft">Beauty film — 2025</span></div></a>
+<a class="acard" data-cat="object" data-yt="en6CRaZYdLs" data-ar="1080/1350" data-t="Eucerin" data-me="Beauty film — 2024"><div class="m" style="aspect-ratio:1080/1350"><img src="media/euc.jpg" alt="" loading="lazy"><video data-src="media/euc.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Eucerin</b><span class="cap-s soft">Beauty film — 2024</span></div></a>
+<a class="acard" data-cat="object" data-yt="9MtpzP1vbX0" data-ar="1080/1350" data-t="Sooryehan" data-me="Beauty film — 2024"><div class="m" style="aspect-ratio:1080/1350"><img src="media/sry.jpg" alt="" loading="lazy"><video data-src="media/sry.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Sooryehan</b><span class="cap-s soft">Beauty film — 2024</span></div></a>
+<a class="acard" data-cat="object" data-yt="FB1Pxh9BCK8" data-ar="1080/1350" data-t="Labote" data-me="Beauty film — 2022"><div class="m" style="aspect-ratio:1080/1350"><img src="media/labote.jpg" alt="" loading="lazy"><video data-src="media/labote.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Labote</b><span class="cap-s soft">Beauty film — 2022</span></div></a>
+<a class="acard" data-cat="fashion" data-yt="qfi7lXwUXVQ" data-ar="3840/2160" data-t="Bridal" data-me="Fashion film — 2023"><div class="m" style="aspect-ratio:3840/2160"><img src="media/enzo.jpg" alt="" loading="lazy"><video data-src="media/enzo.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Bridal</b><span class="cap-s soft">Fashion film — 2023</span></div></a>
+<a class="acard" data-cat="object" data-yt="hEobE4HCa-4" data-ar="1080/1920" data-t="Pouch" data-me="Product film — 2026"><div class="m" style="aspect-ratio:1080/1920"><img src="media/pouch.jpg" alt="" loading="lazy"><video data-src="media/pouch.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Pouch</b><span class="cap-s soft">Product film — 2026</span></div></a>
+<a class="acard" data-cat="object" data-yt="V7YkHJiV84U" data-ar="1080/1350" data-t="3D Film" data-me="2021"><div class="m" style="aspect-ratio:1080/1350"><img src="media/st3d.jpg" alt="" loading="lazy"><video data-src="media/st3d.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>3D Film</b><span class="cap-s soft">2021</span></div></a>
+<a class="acard" data-cat="object" data-yt="2EfAItMuS1w" data-ar="1920/1080" data-t="3D Film" data-me="2022"><div class="m" style="aspect-ratio:1920/1080"><img src="media/d3.jpg" alt="" loading="lazy"><video data-src="media/d3.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>3D Film</b><span class="cap-s soft">2022</span></div></a>
+<a class="acard" data-cat="brand" data-yt="u_Ga8AeIdKE" data-ar="1080/1920" data-t="Cosmopolitan × Häagen-Dazs" data-me="Brand film — 2026"><div class="m" style="aspect-ratio:1080/1920"><img src="media/haagen.jpg" alt="" loading="lazy"><video data-src="media/haagen.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Cosmopolitan × Häagen-Dazs</b><span class="cap-s soft">Brand film — 2026</span></div></a>
+<a class="acard" data-cat="brand" data-yt="zfkMidehSJE" data-ar="1080/1920" data-t="SSG" data-me="Campaign — 2026"><div class="m" style="aspect-ratio:1080/1920"><img src="media/ssg1.jpg" alt="" loading="lazy"><video data-src="media/ssg1.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>SSG</b><span class="cap-s soft">Campaign — 2026</span></div></a>
+<a class="acard" data-cat="brand" data-yt="TIB1NqYje-4" data-ar="1080/1920" data-t="National Geographic" data-me="Spring — 2026"><div class="m" style="aspect-ratio:1080/1920"><img src="media/ng.jpg" alt="" loading="lazy"><video data-src="media/ng.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>National Geographic</b><span class="cap-s soft">Spring — 2026</span></div></a>
+<a class="acard" data-cat="brand" data-yt="dmR610fAIAU" data-ar="1072/1928" data-t="New Year" data-me="Brand film — 2026"><div class="m" style="aspect-ratio:1072/1928"><img src="media/ny26.jpg" alt="" loading="lazy"><video data-src="media/ny26.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>New Year</b><span class="cap-s soft">Brand film — 2026</span></div></a>
+<a class="acard" data-cat="brand" data-yt="6jJOSCht4uc" data-ar="1440/3120" data-t="Samsung" data-me="Brand film — 2025"><div class="m" style="aspect-ratio:1440/3120"><img src="media/sam.jpg" alt="" loading="lazy"><video data-src="media/sam.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Samsung</b><span class="cap-s soft">Brand film — 2025</span></div></a>
+<a class="acard" data-cat="brand" data-yt="l-nARd18FdQ" data-ar="1080/1350" data-t="Film" data-me="2024"><div class="m" style="aspect-ratio:1080/1350"><img src="media/td.jpg" alt="" loading="lazy"><video data-src="media/td.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Film</b><span class="cap-s soft">2024</span></div></a>
+<a class="acard" data-cat="brand" data-yt="hj_iSl37Aqg" data-ar="1920/1080" data-t="Film" data-me="2022"><div class="m" style="aspect-ratio:1920/1080"><img src="media/ws.jpg" alt="" loading="lazy"><video data-src="media/ws.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Film</b><span class="cap-s soft">2022</span></div></a>
+<a class="acard" data-cat="brand" data-yt="A6eMUMjw6yg" data-ar="3840/2160" data-t="Google Play — Best of 2022" data-me="Brand film — 2022"><div class="m" style="aspect-ratio:3840/2160"><img src="media/gbest.jpg" alt="" loading="lazy"><video data-src="media/gbest.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Google Play — Best of 2022</b><span class="cap-s soft">Brand film — 2022</span></div></a>
+<a class="acard" data-cat="brand" data-yt="3z6jObkuP1M" data-ar="3840/2160" data-t="Google Play" data-me="Brand film — 2022"><div class="m" style="aspect-ratio:3840/2160"><img src="media/gmoon.jpg" alt="" loading="lazy"><video data-src="media/gmoon.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Google Play</b><span class="cap-s soft">Brand film — 2022</span></div></a>
+<a class="acard" data-cat="brand" data-yt="RQW0RmRlCMo" data-ar="3840/2160" data-t="Google Play" data-me="Brand film — 2022"><div class="m" style="aspect-ratio:3840/2160"><img src="media/gum.jpg" alt="" loading="lazy"><video data-src="media/gum.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Google Play</b><span class="cap-s soft">Brand film — 2022</span></div></a>
+<a class="acard" data-cat="brand" data-yt="hzm6wABrBAE" data-ar="1920/1080" data-t="Feel the Rhythm of Gangwon" data-me="Brand film — 2020"><div class="m" style="aspect-ratio:1920/1080"><img src="media/gw.jpg" alt="" loading="lazy"><video data-src="media/gw.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Feel the Rhythm of Gangwon</b><span class="cap-s soft">Brand film — 2020</span></div></a>
+<a class="acard" data-cat="art" data-yt="ucKu9Rs_iOw" data-ar="1620/1080" data-t="Theatre — Vortex" data-me="Stage visuals — 2025"><div class="m" style="aspect-ratio:1620/1080"><img src="media/theat.jpg" alt="" loading="lazy"><video data-src="media/theat.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Theatre — Vortex</b><span class="cap-s soft">Stage visuals — 2025</span></div></a>
+<a class="acard" data-cat="art" data-yt="UCJSIXeZOl4" data-ar="1620/1080" data-t="Theatre — Shade" data-me="Stage visuals — 2025"><div class="m" style="aspect-ratio:1620/1080"><img src="media/theat2.jpg" alt="" loading="lazy"><video data-src="media/theat2.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Theatre — Shade</b><span class="cap-s soft">Stage visuals — 2025</span></div></a>
+<a class="acard" data-cat="art" data-yt="o65H2kLiz6s" data-ar="1920/1080" data-t="Park Hyung-sik" data-me="Fan concert VCR — 2025"><div class="m" style="aspect-ratio:1920/1080"><img src="media/phs.jpg" alt="" loading="lazy"><video data-src="media/phs.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>Park Hyung-sik</b><span class="cap-s soft">Fan concert VCR — 2025</span></div></a>
+<a class="acard" data-cat="art" data-yt="BKZCby1Y5vE" data-ar="1920/1080" data-t="K-Art" data-me="Exhibition film — 2025"><div class="m" style="aspect-ratio:1920/1080"><img src="media/kart.jpg" alt="" loading="lazy"><video data-src="media/kart.mp4" muted loop playsinline preload="none"></video></div><div class="t"><b>K-Art</b><span class="cap-s soft">Exhibition film — 2025</span></div></a>
+  </div>
+</section>
+
+<section class="about dark" id="about">
+  <div class="pt rv"><img src="media/ceo.jpg" alt="Kong Subin"></div>
+  <div class="tx rv">
+    <span class="cap-s soft">Founder &amp; Director</span>
+    <h2>Kong <i>Subin</i></h2>
+    <p class="role cap-s soft">공수빈 — OVJ · 오버미디어아트 대표</p>
+    <p class="bio">시인이 되고 싶었다. 문장 대신 빛을 택했다.<br>단편영화로 시작해 서울패션위크의 무대 영상과 밀라노 엑스포를 지나, W·ELLE·Marie Claire의 패션필름과 문학관·문화원의 미디어월에 이르기까지 — 옷과 벽, 사람과 공간 위에 이미지를 입힌다.</p>
+    <ul class="cv">
+      <li><span class="soft">2026</span><span>Story Ai Works (SAW) — CTO</span></li>
+      <li><span class="soft">2024</span><span>Boundaries of Existence — KCC New York</span></li>
+      <li><span class="soft">2023</span><span>W Korea × Gucci, Chanel — Fashion films</span></li>
+      <li><span class="soft">2022</span><span>Korea Pavilion — Expo 2020 Dubai</span></li>
+      <li><span class="soft">2021</span><span>OVJ Co. founded</span></li>
+      <li><span class="soft">2020</span><span>Weki Meki “OOPSY” — Music video</span></li>
+      <li><span class="soft">2019</span><span>Kim Hong-shin Literature Museum — Media wall</span></li>
+      <li><span class="soft">2017</span><span>Over Media Art founded — W, ELLE, Vogue fashion films</span></li>
+      <li><span class="soft">2015</span><span>Korea Pavilion — Expo Milano</span></li>
+      <li><span class="soft">2013—15</span><span>Seoul Fashion Week — House visuals</span></li>
+      <li><span class="soft">2010—14</span><span>Short films 〈소원〉 〈한계가족〉</span></li>
+    </ul>
+  </div>
+</section>
+
+<a class="sawban rv" href="https://www.storyaiworks.com/" target="_blank" rel="noopener">
+  <div class="reel"><div class="strip"><img src="media/saw_hist.jpg" alt=""><img src="media/saw_sf_whale.jpg" alt=""><img src="media/saw_storm.jpg" alt=""><img src="media/saw_fire.jpg" alt=""><img src="media/saw_hist_walk.jpg" alt=""><img src="media/saw_race_helmet.jpg" alt=""><img src="media/saw_hist.jpg" alt=""><img src="media/saw_sf_whale.jpg" alt=""><img src="media/saw_storm.jpg" alt=""><img src="media/saw_fire.jpg" alt=""><img src="media/saw_hist_walk.jpg" alt=""><img src="media/saw_race_helmet.jpg" alt=""></div></div>
+  <div class="in">
+    <img class="lg" src="media/saw_logo_white.png" alt="Story Ai Works">
+    <div class="tx"><b>AI-Native Film Studio</b><span class="cap-s">Kong Subin — CTO · Story Ai Works</span></div>
+    <span class="go cap-s">storyaiworks.com ↗</span>
+  </div>
+</a>
+
+<section class="space" id="space">
+  <h2 class="rv">Space — <i>Easter Egg</i></h2>
+  <p class="cap-s soft rv" style="margin-top:14px">Our studio in Ilsan, Korea</p>
+  <figure class="one"><img src="media/space.jpg" alt="Easter Egg studio, Ilsan — on set"></figure>
+</section>
+
+<section class="contact" id="contact">
+  <span class="cap-s soft">Commission · Exhibition · Collaboration</span>
+  <h2 class="rv" style="margin-top:20px">Say <i style="font-style:italic">hello</i> —<br><a href="mailto:oversubin87@gmail.com">oversubin87@gmail.com</a></h2>
+  <div class="cg rv">
+    <div><span class="cap-s soft">Phone</span><a href="tel:+821034689660">+82 10 3468 9660</a></div>
+    <div><span class="cap-s soft">Studio</span>경기도 고양시 일산동구<br>노첨길24번길 34-3</div>
+    <div><span class="cap-s soft">Follow</span><a href="https://www.instagram.com/subin_kong_ovj/" target="_blank" rel="noopener">Instagram</a><br><a href="https://www.youtube.com/@overmediaart1907" target="_blank" rel="noopener">YouTube</a><br><a href="https://vimeo.com/subinkong" target="_blank" rel="noopener">Vimeo</a></div>
+    <div><span class="cap-s soft">Studio name</span>OVJ<br>Over Media Art</div>
+  </div>
+</section>
+<footer><span class="flg"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="1046.8 475.9 467.5 188.0" fill="currentColor"><path d="M 1334.179688 659.128906 C 1308.628906 598.613281 1283.527344 539.171875 1257.730469 478.070312 C 1262.210938 478.070312 1265.558594 478.070312 1268.90625 478.070312 C 1279.988281 478.074219 1291.070312 478.242188 1302.144531 478 C 1306.363281 477.90625 1308.441406 479.511719 1309.980469 483.34375 C 1324.949219 520.652344 1340.113281 557.882812 1355.054688 595.203125 C 1355.925781 597.378906 1356.117188 600.386719 1355.355469 602.566406 C 1349.144531 620.3125 1342.636719 637.957031 1336.195312 655.621094 C 1335.90625 656.410156 1335.355469 657.101562 1334.179688 659.128906 "/><path d="M 1512.632812 478.03125 C 1512.632812 485.035156 1512.632812 490.660156 1512.632812 496.28125 C 1512.632812 534.847656 1511.589844 573.449219 1512.925781 611.96875 C 1514.273438 650.785156 1482.09375 663.910156 1456.386719 659.164062 C 1454.789062 658.871094 1453.1875 658.574219 1451.296875 658.222656 C 1451.816406 657.402344 1452.046875 656.523438 1452.527344 656.347656 C 1467.367188 651.019531 1471.246094 639.605469 1471.15625 625.089844 C 1470.878906 578.765625 1471.1875 532.441406 1470.914062 486.113281 C 1470.875 479.496094 1472.945312 477.632812 1479.328125 477.90625 C 1490.089844 478.367188 1500.886719 478.03125 1512.632812 478.03125 "/><path d="M 1112.972656 658.3125 C 1072.757812 642.894531 1047.3125 607.886719 1047.035156 568.734375 C 1046.753906 529.167969 1072.785156 492.304688 1112.507812 475.90625 C 1091.527344 514.121094 1094.527344 555.652344 1096.269531 596.953125 C 1096.964844 613.433594 1099.503906 629.691406 1106.070312 645.027344 C 1107.894531 649.277344 1110.328125 653.265625 1112.972656 658.3125 "/><path d="M 1164.789062 476.585938 C 1199.339844 490.191406 1230.292969 524.890625 1230.070312 568.859375 C 1229.839844 613.507812 1196.628906 646.535156 1164.371094 657.765625 C 1181.855469 629.796875 1182.144531 598.421875 1182.28125 567.378906 C 1182.421875 536.410156 1181.765625 505.222656 1164.789062 476.585938 "/><path d="M 1437.222656 608.894531 C 1448.734375 608.765625 1457.867188 617.789062 1457.875 629.300781 C 1457.882812 640.773438 1448.820312 649.964844 1437.421875 650.046875 C 1426.488281 650.125 1417.351562 641.011719 1417.195312 629.867188 C 1417.027344 618.210938 1425.800781 609.023438 1437.222656 608.894531 "/></svg></span><span>오버미디어아트 408-33-24766 · 주식회사 오브이제이 607-86-21038 · 대표 공수빈</span><span>© 2026 OVJ — Over Media Art</span></footer>
+
+<div id="player" role="dialog" aria-modal="true"><div class="brand"><span class="lg"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="1046.8 475.9 467.5 188.0" fill="currentColor"><path d="M 1334.179688 659.128906 C 1308.628906 598.613281 1283.527344 539.171875 1257.730469 478.070312 C 1262.210938 478.070312 1265.558594 478.070312 1268.90625 478.070312 C 1279.988281 478.074219 1291.070312 478.242188 1302.144531 478 C 1306.363281 477.90625 1308.441406 479.511719 1309.980469 483.34375 C 1324.949219 520.652344 1340.113281 557.882812 1355.054688 595.203125 C 1355.925781 597.378906 1356.117188 600.386719 1355.355469 602.566406 C 1349.144531 620.3125 1342.636719 637.957031 1336.195312 655.621094 C 1335.90625 656.410156 1335.355469 657.101562 1334.179688 659.128906 "/><path d="M 1512.632812 478.03125 C 1512.632812 485.035156 1512.632812 490.660156 1512.632812 496.28125 C 1512.632812 534.847656 1511.589844 573.449219 1512.925781 611.96875 C 1514.273438 650.785156 1482.09375 663.910156 1456.386719 659.164062 C 1454.789062 658.871094 1453.1875 658.574219 1451.296875 658.222656 C 1451.816406 657.402344 1452.046875 656.523438 1452.527344 656.347656 C 1467.367188 651.019531 1471.246094 639.605469 1471.15625 625.089844 C 1470.878906 578.765625 1471.1875 532.441406 1470.914062 486.113281 C 1470.875 479.496094 1472.945312 477.632812 1479.328125 477.90625 C 1490.089844 478.367188 1500.886719 478.03125 1512.632812 478.03125 "/><path d="M 1112.972656 658.3125 C 1072.757812 642.894531 1047.3125 607.886719 1047.035156 568.734375 C 1046.753906 529.167969 1072.785156 492.304688 1112.507812 475.90625 C 1091.527344 514.121094 1094.527344 555.652344 1096.269531 596.953125 C 1096.964844 613.433594 1099.503906 629.691406 1106.070312 645.027344 C 1107.894531 649.277344 1110.328125 653.265625 1112.972656 658.3125 "/><path d="M 1164.789062 476.585938 C 1199.339844 490.191406 1230.292969 524.890625 1230.070312 568.859375 C 1229.839844 613.507812 1196.628906 646.535156 1164.371094 657.765625 C 1181.855469 629.796875 1182.144531 598.421875 1182.28125 567.378906 C 1182.421875 536.410156 1181.765625 505.222656 1164.789062 476.585938 "/><path d="M 1437.222656 608.894531 C 1448.734375 608.765625 1457.867188 617.789062 1457.875 629.300781 C 1457.882812 640.773438 1448.820312 649.964844 1437.421875 650.046875 C 1426.488281 650.125 1417.351562 641.011719 1417.195312 629.867188 C 1417.027344 618.210938 1425.800781 609.023438 1437.222656 608.894531 "/></svg></span>Over Media Art</div><button class="x" id="px">Close ✕</button><button class="nav pv" id="pp" aria-label="이전">‹</button><div class="frame" id="pf"></div><div class="cap"><b id="pt"></b><span id="pm"></span></div><button class="nav nx" id="pn" aria-label="다음">›</button></div>
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.06});
+  document.querySelectorAll('.rv,.mask').forEach(function(el){io.observe(el)});
+  var hover=matchMedia('(hover:hover)').matches;
+  function start(v){if(!v.getAttribute('src'))v.src=v.dataset.src;var p=v.play();if(p&&p.then)p.then(function(){v.classList.add('play')}).catch(function(){})}
+  function stop(v){v.pause()}
+  // 대표작: 화면에 들어오면 재생
+  var vio=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting)start(v);else stop(v)})},{threshold:.35});
+  document.querySelectorAll('.sel video').forEach(function(v){vio.observe(v)});
+  // 아카이브: 데스크톱은 마우스를 올리면, 휴대폰은 화면 중앙에 오면 재생
+  document.querySelectorAll('.acard').forEach(function(a){var v=a.querySelector('video');
+    if(hover){a.addEventListener('mouseenter',function(){start(v)});a.addEventListener('mouseleave',function(){stop(v);v.classList.remove('play')})}
+    else vio.observe(v)});
+
+  // 영상 창 — 유튜브 일부공개 영상을 iframe 으로 (youtube-nocookie)
+  var PL=[].slice.call(document.querySelectorAll('[data-yt]')),cur=-1,pl=document.getElementById('player'),pf=document.getElementById('pf');
+  function openP(i){cur=(i+PL.length)%PL.length;var a=PL[cur],ar=(a.dataset.ar||'16/9').split('/');pl.style.setProperty('--ar',(+ar[0])/(+ar[1]));
+    pf.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+a.dataset.yt+'?autoplay=1&rel=0&modestbranding=1&playsinline=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="'+(a.dataset.t||'')+'"></iframe>';
+    document.getElementById('pt').textContent=a.dataset.t||'';document.getElementById('pm').textContent=a.dataset.me||'';pl.classList.add('on');document.body.style.overflow='hidden'}
+  function closeP(){pl.classList.remove('on');pf.innerHTML='';document.body.style.overflow=''}
+  PL.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();openP(i)})});
+  document.getElementById('px').onclick=closeP;document.getElementById('pp').onclick=function(){openP(cur-1)};document.getElementById('pn').onclick=function(){openP(cur+1)};
+  pl.addEventListener('click',function(e){if(e.target===pl)closeP()});
+  document.addEventListener('keydown',function(e){if(!pl.classList.contains('on'))return;if(e.key==='Escape')closeP();else if(e.key==='ArrowRight')openP(cur+1);else if(e.key==='ArrowLeft')openP(cur-1)});
+  document.querySelectorAll('.filters button').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.filters button').forEach(function(x){x.classList.toggle('on',x===b)});
+    var f=b.dataset.f;document.querySelectorAll('.acard').forEach(function(c){c.classList.toggle('hide',f!=='all'&&c.dataset.cat!==f)})})});
+})();
+</script>
+</body>
+</html>
