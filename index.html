@@ -105,6 +105,11 @@ a:hover .m img,a:hover .m video{transform:scale(1.03)}
 .piece .trip.states{grid-template-columns:repeat(3,1fr);gap:12px}
 .piece .trip.states img{width:100%;display:block}
 @media(max-width:860px){.piece .trip.states{grid-template-columns:1fr 1fr}}
+.piece.nol .nm{grid-column:2/10;margin-top:clamp(30px,6vh,70px)}
+.piece.nol .nm video{width:100%;display:block;-webkit-mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 62%,transparent 100%)}
+.piece.nol .txt{grid-column:10/13;align-self:end}
+.piece.nol .ns{grid-column:8/11;display:flex;flex-direction:column;gap:8px}
+.piece.nol .ns video{width:100%;display:block;opacity:.85}
 @media(max-width:860px){.ma-head>*,.piece>*{grid-column:1/-1!important;margin-top:0!important}.piece .h{flex-direction:column;gap:6px}}
 
 .arc{padding:clamp(100px,18vh,200px) 0 clamp(90px,16vh,180px)}
@@ -248,12 +253,11 @@ footer{align-items:center;display:flex;justify-content:space-between;flex-wrap:w
     <h2 class="rv">Media<br>Art</h2>
     <p class="rv">벽은 화면이 아니라 무대다. 문학관의 긴 벽과 뉴욕의 전시장에서, 우리는 오브제와 이미지, 관객이 같은 호흡을 나누는 공간을 연출한다.</p>
   </div>
-  <div class="piece">
+  <div class="piece nol">
     <div class="h rv"><b>NOL Festival — Kinetic Frame</b><span class="cap-s soft">NOL × HSAD — Kinetic LED wall — 2026</span></div>
-    <div class="full sim rv"><video src="media/nol_real.mp4" poster="media/nol_real_poster.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="cap-s soft">Showroom playback — the frame of modules rises and falls with the characters</span></div>
-    <div class="full sim rv"><video src="media/nol_sim.mp4" poster="media/nol_sim_poster.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="cap-s soft">Module choreography · simulation</span></div>
-    <div class="trip states rv"><img src="media/nol_s1.jpg" alt=""><img src="media/nol_s2.jpg" alt=""><img src="media/nol_s3.jpg" alt=""></div>
-    <div class="txt rv">화면을 둘러싼 테두리가 살아 움직인다. 페스티벌의 캐릭터들이 블록을 밟고 오르면, 벽의 모듈이 그 리듬대로 솟고 가라앉는다.</div>
+    <div class="nm rv"><video src="media/nol_sim.mp4" poster="media/nol_sim_poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+    <div class="txt rv">화면을 둘러싼 테두리가 살아 움직인다. 페스티벌의 캐릭터들이 블록을 밟고 오르면, 벽의 모듈이 그 리듬대로 솟고 가라앉는다.<br><span class="cap-s soft">Module choreography · simulation</span></div>
+    <div class="ns rv"><video src="media/nol_real.mp4" poster="media/nol_real_poster.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="cap-s soft">Showroom test</span></div>
   </div>
   <div class="piece">
     <div class="h rv" data-yt="iHou6ZHiucQ" data-ar="16/9" data-t="Kim Hong-shin Asks, Lee O-young Answers" data-me="Kinetic media wall — 2019"><b>Kim Hong-shin Asks, Lee O-young Answers</b><span class="cap-s soft">Kim Hong-shin Literature Museum — 2019 — 2392 × 520</span></div>
