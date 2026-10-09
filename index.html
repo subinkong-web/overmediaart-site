@@ -161,6 +161,11 @@ a:hover .m img,a:hover .m video{transform:scale(1.03)}
 .sawban .go{margin-left:auto;border-bottom:1px solid rgba(255,255,255,.7)}
 @media(max-width:700px){.sawban{height:auto}.sawban .in{flex-wrap:wrap;gap:12px;padding:22px var(--g);background:rgba(103,68,152,.82)}.sawban .reel{inset:0}.sawban .go{margin-left:0}}
 @media(prefers-reduced-motion:reduce){.sawban .strip{animation:none}}
+.sawban.egg{background:#0b0c0b}
+.sawban.egg .in{background:linear-gradient(90deg,#0b0c0b 34%,rgba(11,12,11,.55) 60%,rgba(11,12,11,0))}
+.sawban.egg .lgt{font-weight:900;font-size:clamp(17px,1.5vw,21px);letter-spacing:.04em;line-height:1;white-space:nowrap}
+.sawban.egg .lgt b{color:#7cf24a}
+@media(max-width:700px){.sawban.egg .in{background:rgba(11,12,11,.82)}}
 @media(max-width:760px){.space .g2 figure{grid-column:1/-1!important;margin-top:0!important}}
 
 .contact{padding:clamp(110px,20vh,220px) var(--g) clamp(60px,10vh,100px)}
@@ -372,6 +377,15 @@ footer{align-items:center;display:flex;justify-content:space-between;flex-wrap:w
   <p class="cap-s soft rv" style="margin-top:14px">Our studio in Ilsan, Korea</p>
   <figure class="one"><img src="media/space.jpg" alt="Easter Egg studio, Ilsan — on set"></figure>
 </section>
+
+<a class="sawban egg rv" href="https://www.eastereggstudio.co.kr/" target="_blank" rel="noopener">
+  <div class="reel"><div class="strip"><img src="media/egg_hero.jpg" alt=""><img src="media/egg_white1.jpg" alt=""><img src="media/egg_purple.jpg" alt=""><img src="media/egg_white3.jpg" alt=""><img src="media/egg_orange.jpg" alt=""><img src="media/egg_teal.jpg" alt=""><img src="media/egg_hero.jpg" alt=""><img src="media/egg_white1.jpg" alt=""><img src="media/egg_purple.jpg" alt=""><img src="media/egg_white3.jpg" alt=""><img src="media/egg_orange.jpg" alt=""><img src="media/egg_teal.jpg" alt=""></div></div>
+  <div class="in">
+    <span class="lgt">EASTER<b>EGG</b> STUDIO</span>
+    <div class="tx"><b>Chroma Key &amp; White Cyc Stage</b><span class="cap-s">Studio rental — Ilsan, Goyang · Easter Egg Studio</span></div>
+    <span class="go cap-s">eastereggstudio.co.kr ↗</span>
+  </div>
+</a>
 
 <section class="contact" id="contact">
   <span class="cap-s soft">Commission · Exhibition · Collaboration</span>
