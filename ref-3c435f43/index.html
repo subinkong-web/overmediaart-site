@@ -11,7 +11,7 @@ section{margin-top:40px;padding-top:20px;border-top:1px solid var(--line)}
 h2{font-size:20px;margin:0}.fam{color:var(--sub);font-size:14px;margin:2px 0 16px}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
 .card{position:relative;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.05);border:2px solid transparent}
-.card.on{border-color:var(--gold)}
+.card.on{border-color:#c0392b;opacity:.45}
 .card img{width:100%;height:auto;display:block;background:#181818}
 .pick{position:absolute;left:8px;top:8px;background:rgba(255,255,255,.94);border-radius:6px;padding:3px 9px;font-size:14px;font-weight:700;display:flex;gap:6px;align-items:center;cursor:pointer}
 .pick input{width:16px;height:16px;margin:0}
@@ -25,7 +25,7 @@ h2{font-size:20px;margin:0}.fam{color:var(--sub);font-size:14px;margin:2px 0 16p
 <div class="kick">KIA SOFT ROBOTICS · REFERENCE</div>
 <h1>모션그래픽 · 3D 레퍼런스 39편</h1>
 <p class="lead">기존 14편 + 새로 25편(NEW). 최정상 스튜디오 · 브랜드 본사 · 수상작 위주로 44편을 내려받아 프레임을 보고 39편을 남겼습니다. 기준: 스타일의 폭 · 세련됨 · 깔끔함.</p>
-<p class="lead">그림은 영상마다 6장면, 원본 비율 그대로(정사각 · 시네마스코프 포함). 카드 왼쪽 위 칸을 누르시면 아래 띠에 고르신 번호가 모입니다.</p>
+<p class="lead">그림은 영상마다 6장면, 원본 비율 그대로(정사각 · 시네마스코프 포함). 카드 왼쪽 위 칸을 누르시면 아래 띠에 뺄 번호가 모입니다.</p>
 <p class="lead">보고 뺀 것: Toyota Aygo(Zeitguised, 어둡고 낡음) · fritz-kola(Kouhei Nakama, 소재 약함) · Psyop 「Power of Play」 · Hornet 「Surf」(과한 캐릭터) · Freehand Dyson(낡은 제품 CG) / 이전 판에서 뺀 것: Aixsponza Seed · Google I/O 2024 · Stripe Sessions · vaylens · aflow.</p>
 <section><h2>① 소프트바디 · 공기 3D</h2><p class="fam">부풀고 눌리고 튀는 말랑한 덩어리 — 「공기」를 형태로</p><div class="grid"><div class="card" data-n="1"><label class="pick"><input type="checkbox" value="1"><span>#01</span></label>
 <img src="img/2HqvQfk_svc.jpg" alt="" loading="lazy"><div class="meta"><h3>Nike 「Air Max 2017」</h3><div class="who">ManvsMachine</div><p>파스텔 단색 배경, 마시멜로 같은 덩어리가 모여 신발이 되고 흩어짐.</p><a href="https://www.youtube.com/watch?v=2HqvQfk_svc" target="_blank" rel="noopener">영상 보기</a></div></div><div class="card" data-n="2"><label class="pick"><input type="checkbox" value="2"><span>#02</span></label>
@@ -68,7 +68,7 @@ h2{font-size:20px;margin:0}.fam{color:var(--sub);font-size:14px;margin:2px 0 16p
 <img src="img/ucSUs3adMQ8.jpg" alt="" loading="lazy"><div class="meta"><h3>「Halt and Catch Fire」 오프닝</h3><div class="who">Elastic · Cooper Hewitt 디자인 트리엔날레 소개</div><p>빨강 · 검정 글리치, 브라운관 신호의 빛.</p><a href="https://www.youtube.com/watch?v=ucSUs3adMQ8" target="_blank" rel="noopener">영상 보기</a></div></div><div class="card" data-n="39"><label class="pick"><input type="checkbox" value="39"><span>#39</span></label><span class="new">NEW</span>
 <img src="img/zHdh835Pgqk.jpg" alt="" loading="lazy"><div class="meta"><h3>「Semi Permanent」 타이틀</h3><div class="who">Framestore</div><p>검정 속 금속 기계 · 푸른 유체 표면. 하이엔드 CG 질감.</p><a href="https://www.youtube.com/watch?v=zHdh835Pgqk" target="_blank" rel="noopener">영상 보기</a></div></div></div></section>
 </div>
-<div class="bar">고르신 것 <b id="cnt">0</b>편 : <span id="lst">—</span> <button id="cp">번호 복사</button></div>
+<div class="bar">뺄 것 <b id="cnt">0</b>편 : <span id="lst">—</span> <button id="cp">번호 복사</button></div>
 <script>
 const K='kia-ref-pick';let s=[];try{s=JSON.parse(localStorage.getItem(K)||'[]')}catch(e){}
 const bx=[...document.querySelectorAll('.pick input')];
